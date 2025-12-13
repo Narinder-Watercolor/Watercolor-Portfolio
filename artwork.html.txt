@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name – Artwork</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text: #1b1b1b;
+      --muted: #777;
+      --line: #e6e6e6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1.5rem 2rem 3rem;
+      display: flex;
+      gap: 3rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
+
+    section { margin-bottom: 6rem; }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      display: block;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Artwork</h1>
+  <p>Selected works in watercolor and pencil.</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="introduction.html">Introduction</a>
+  <a href="artwork.html">Artwork</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+  <!-- Human Figures -->
+  <section id="figures">
+    <h2>Human Figures</h2>
+    <div class="gallery">
+      <img src="fig_19.jpg" alt="Watercolor portrait" />
+      <img src="fig_17.jpg" alt="Watercolor portrait" />
+      <img src="fig_16.jpg" alt="Watercolor portrait" />
+      <img src="fig_10.jpg" alt="Watercolor portrait" />
+      <img src="fig_09.jpg" alt="Watercolor portrait" />
+      <img src="fig_02.jpg" alt="Face study" />
+      <img src="fig_01.jpg" alt="Minimal portrait" />
+      <img src="fig_03.jpg" alt="Watercolor portrait" />
+      <img src="fig_04.jpg" alt="Watercolor portrait" />
+      <img src="fig_06.jpg" alt="Watercolor portrait" />
+      <img src="fig_07.jpg" alt="Watercolor portrait" />
+      <img src="fig_05.jpg" alt="Watercolor portrait" />
+      <img src="fig_08.jpg" alt="Watercolor portrait" />
+      <img src="fig_13.jpg" alt="Watercolor portrait" />
+      <img src="fig_11.jpg" alt="Watercolor portrait" />
+      <img src="fig_14.jpg" alt="Watercolor portrait" />
+      <img src="fig_15.jpg" alt="Watercolor portrait" />
+      <img src="fig_12.jpg" alt="Watercolor portrait" />
+    </div>
+  </section>
+
+  <!-- Landscapes -->
+  <section id="landscapes">
+    <h2>Landscapes</h2>
+    <div class="gallery">
+      <img src="land_06.jpg" alt="Landscape study" />
+      <img src="land_02.jpg" alt="Atmospheric scenery" />
+      <img src="land_03.jpg" alt="Landscape detail" />
+      <img src="land_01.jpg" alt="Landscape study" />
+      <img src="land_04.jpg" alt="Landscape study" />
+      <img src="land_05.jpg" alt="Landscape study" />
+      <img src="land_07.jpg" alt="Landscape study" />
+    </div>
+  </section>
+
+  <!-- Pencil Shading -->
+  <section id="pencil">
+    <h2>Pencil Shading</h2>
+    <div class="gallery">
+      <img src="pencil_01.jpg" alt="Pencil portrait" />
+      <img src="pencil_02.jpg" alt="Shading study" />
+      <img src="pencil_03.jpg" alt="Graphite figure" />
+    </div>
+  </section>
+
+  <!-- Floral Paintings -->
+  <section id="floral">
+    <h2>Floral Paintings</h2>
+    <div class="gallery">
+      <img src="flower_04.jpg" alt="Floral painting" />
+      <img src="floral_01.jpg" alt="Floral painting" />
+      <img src="floral_02.jpg" alt="Floral painting" />
+      <img src="floral_06.jpg" alt="Floral painting" />
+      <!-- Add more floral images here -->
+    </div>
+  </section>
+
+  <!-- Still Life and Others -->
+  <section id="stilllife">
+    <h2>Still Life and Others</h2>
+    <div class="gallery">
+      <img src="oth_01.jpg" alt="Still life painting" />
+      <img src="oth_02.jpg" alt="Still life painting" />
+      <img src="oth_04.jpg" alt="Still life painting" />
+      <img src="oth_05.jpg" alt="Still life painting" />
+      <img src="oth_06.jpg" alt="Still life painting" />
+      <!-- Add more still life or other works here -->
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2025 Your Name</footer>
+
+</body>
+</html>

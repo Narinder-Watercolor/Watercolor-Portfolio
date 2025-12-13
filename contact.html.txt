@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name – Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Contact</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="introduction.html">Introduction</a>
+  <a href="artwork.html">Artwork</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <p class="text">
+      I would love to hear from you! Whether you are interested in my artwork, workshops, or collaborations, please reach out through the channels below.
+    </p>
+
+    <div class="contact-links">
+      <p>Email: <a href="mailto:artistnarender@icloud.com">artistnarender@icloud.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/artist_narender_1008?igsh=NXM2ZjFudDBsenRt&utm_source=qr" target="_blank">@artist_narender_1008</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>© 2025 Your Name</footer>
+
+</body>
+</html>
