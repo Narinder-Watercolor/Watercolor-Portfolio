@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name – Introduction</title>
+  <title>Narinder – Introduction</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
 
@@ -33,7 +34,6 @@
     header h1 {
       font-size: 3rem;
       font-weight: 400;
-      margin-bottom: 0.5rem;
     }
 
     nav {
@@ -54,27 +54,33 @@
     nav a:hover { text-decoration: underline; }
 
     main {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 3rem 2rem;
     }
 
-    section { margin-bottom: 4rem; }
+    /* Layout with image */
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
 
-    section h2 {
-      font-size: 2rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
+    .intro-photo img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--line);
     }
 
     .text {
       font-size: 1.15rem;
-      color: var(--text);
+      margin-bottom: 1.5rem;
     }
 
     .achievements {
-      margin-top: 2rem;
-      padding-left: 1rem;
+      margin-top: 3rem;
+      padding-left: 1.5rem;
       border-left: 3px solid var(--line);
     }
 
@@ -84,6 +90,13 @@
       text-align: center;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .intro-layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -101,35 +114,50 @@
 </nav>
 
 <main>
-  <section>
-    <p class="text">
-      I am a physicist by training, having completed my PhD in soft condensed matter physics. 
-      Currently, I work as a scientist in the Department of Physics and Astronomy at the 
-      University of Potsdam, Germany. While my professional life revolves around physics, my 
-      heart has always been that of an artist. 
-    </p>
 
-    <p class="text">
-      My passion lies in the watercolor medium, which offers a unique freedom — the fluidity 
-      of water and pigment allows the mind to wander, exploring light, transparency, and form. 
-      I have practiced watercolor for over 25 years, initially focusing on landscapes. Over time, 
-      I discovered the joy of painting human figures and faces, using colors playfully while 
-      capturing the subtle volumes of eyes, nose, lips, and ears with minimal strokes that 
-      reflect light and shadow.
-    </p>
-  </section>
+  <div class="intro-layout">
 
-  <section class="achievements">
-    <h2>Achievements</h2>
-    <p class="text">
-      During my school years, I won several painting competitions at both state and national levels. 
-      I have conducted numerous workshops in Germany and recently participated in an exhibition 
-      in Dresden, Germany, alongside artists from Germany, the United States, Peru, Colombia, and Chile.
-    </p>
-  </section>
+    <!-- Photo -->
+    <div class="intro-photo">
+      <img src="images/photo.jpg" alt="Narinder portrait">
+    </div>
+
+    <!-- Text -->
+    <div>
+      <p class="text">
+        I am a physicist by training, having completed my PhD in soft condensed matter physics.
+        Currently, I work as a scientist in the Department of Physics and Astronomy at the
+        University of Potsdam, Germany. While my professional life revolves around physics,
+        my heart has always been that of an artist.
+      </p>
+
+      <p class="text">
+        My passion lies in the watercolor medium, which offers a unique freedom — the fluidity
+        of water and pigment allows the mind to wander, exploring light, transparency, and form.
+        I have practiced watercolor for over 25 years, initially focusing on landscapes.
+        Over time, I discovered the joy of painting human figures and faces, using colors
+        playfully while capturing the subtle volumes of eyes, nose, lips, and ears with minimal
+        strokes that reflect light and shadow.
+      </p>
+
+      <div class="achievements">
+        <h2>Achievements</h2>
+        <p class="text">
+          During my school years, I won several painting competitions at both state and national
+          levels. I have conducted numerous workshops in Germany and recently participated in an
+          exhibition in Dresden, Germany, alongside artists from Germany, the United States,
+          Peru, Colombia, and Chile.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
 </main>
 
-<footer>© 2025 Your Name</footer>
+<footer>
+  © 2025 Narinder · artistnarender@icloud.com
+</footer>
 
 </body>
 </html>
