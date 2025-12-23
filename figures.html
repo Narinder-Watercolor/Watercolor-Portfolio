@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human Figures – Narinder</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: #f9f9f7;
+      color: #1b1b1b;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 2rem 1rem;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #1b1b1b;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0.5rem 0;
+      font-weight: 400;
+    }
+
+    .featured-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    .featured-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: rgba(0,0,0,0.6);
+      cursor: pointer;
+      user-select: none;
+      padding: 0 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .arrow:hover {
+      color: rgba(0,0,0,0.9);
+    }
+
+    .arrow-left { left: 0; }
+    .arrow-right { right: 0; }
+
+    .grid-container {
+      max-width: 1100px;
+      margin: 2rem auto 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid-container img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    footer {
+      border-top: 1px solid #e6e6e6;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Home</a>
+  <h1>Human Figures</h1>
+  <p>Selected human figure paintings in watercolor.</p>
+</header>
+
+<!-- Featured Painting -->
+<div class="featured-container">
+  <span class="arrow arrow-left" onclick="prevImage()">&#10094;</span>
+  <img id="featured" src="images/fig_19.jpeg" alt="Featured Human Figure">
+  <span class="arrow arrow-right" onclick="nextImage()">&#10095;</span>
+  <div class="caption" id="featured-caption">Figure Study 19 · Watercolor on paper</div>
+</div>
+
+<!-- Grid of All Images -->
+<div class="grid-container" id="grid">
+  <img src="images/fig_19.jpeg" alt="Watercolor portrait" onclick="setFeatured(0)">
+  <img src="images/fig_17.jpeg" alt="Watercolor portrait" onclick="setFeatured(1)">
+  <img src="images/fig_16.jpeg" alt="Watercolor portrait" onclick="setFeatured(2)">
+  <img src="images/fig_10.jpeg" alt="Watercolor portrait" onclick="setFeatured(3)">
+  <img src="images/fig_09.jpeg" alt="Watercolor portrait" onclick="setFeatured(4)">
+  <img src="images/fig_02.jpeg" alt="Face study" onclick="setFeatured(5)">
+  <img src="images/fig_01.jpeg" alt="Minimal portrait" onclick="setFeatured(6)">
+  <img src="images/fig_03.jpeg" alt="Watercolor portrait" onclick="setFeatured(7)">
+  <img src="images/fig_04.jpeg" alt="Watercolor portrait" onclick="setFeatured(8)">
+  <img src="images/fig_06.jpeg" alt="Watercolor portrait" onclick="setFeatured(9)">
+  <img src="images/fig_07.jpeg" alt="Watercolor portrait" onclick="setFeatured(10)">
+  <img src="images/fig_05.jpeg" alt="Watercolor portrait" onclick="setFeatured(11)">
+  <img src="images/fig_08.jpeg" alt="Watercolor portrait" onclick="setFeatured(12)">
+  <img src="images/fig_13.jpeg" alt="Watercolor portrait" onclick="setFeatured(13)">
+  <img src="images/fig_11.jpeg" alt="Watercolor portrait" onclick="setFeatured(14)">
+  <img src="images/fig_14.jpeg" alt="Watercolor portrait" onclick="setFeatured(15)">
+  <img src="images/fig_15.jpeg" alt="Watercolor portrait" onclick="setFeatured(16)">
+  <img src="images/fig_12.jpeg" alt="Watercolor portrait" onclick="setFeatured(17)">
+</div>
+
+<footer>© 2025 Narinder · artistnarender@icloud.com</footer>
+
+<script>
+  const images = [
+    {src: "images/fig_19.jpeg", caption: "Figure Study 19 · Watercolor on paper"},
+    {src: "images/fig_17.jpeg", caption: "Figure Study 17 · Watercolor on paper"},
+    {src: "images/fig_16.jpeg", caption: "Figure Study 16 · Watercolor on paper"},
+    {src: "images/fig_10.jpeg", caption: "Figure Study 10 · Watercolor on paper"},
+    {src: "images/fig_09.jpeg", caption: "Figure Study 09 · Watercolor on paper"},
+    {src: "images/fig_02.jpeg", caption: "Figure Study 02 · Watercolor on paper"},
+    {src: "images/fig_01.jpeg", caption: "Figure Study 01 · Watercolor on paper"},
+    {src: "images/fig_03.jpeg", caption: "Figure Study 03 · Watercolor on paper"},
+    {src: "images/fig_04.jpeg", caption: "Figure Study 04 · Watercolor on paper"},
+    {src: "images/fig_06.jpeg", caption: "Figure Study 06 · Watercolor on paper"},
+    {src: "images/fig_07.jpeg", caption: "Figure Study 07 · Watercolor on paper"},
+    {src: "images/fig_05.jpeg", caption: "Figure Study 05 · Watercolor on paper"},
+    {src: "images/fig_08.jpeg", caption: "Figure Study 08 · Watercolor on paper"},
+    {src: "images/fig_13.jpeg", caption: "Figure Study 13 · Watercolor on paper"},
+    {src: "images/fig_11.jpeg", caption: "Figure Study 11 · Watercolor on paper"},
+    {src: "images/fig_14.jpeg", caption: "Figure Study 14 · Watercolor on paper"},
+    {src: "images/fig_15.jpeg", caption: "Figure Study 15 · Watercolor on paper"},
+    {src: "images/fig_12.jpeg", caption: "Figure Study 12 · Watercolor on paper"}
+  ];
+
+  let currentIndex = 0;
+  const featured = document.getElementById("featured");
+  const caption = document.getElementById("featured-caption");
+
+  function showImage(index){
+    currentIndex = index;
+    featured.src = images[currentIndex].src;
+    caption.textContent = images[currentIndex].caption;
+  }
+
+  function nextImage(){
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage(){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  function setFeatured(index){
+    showImage(index);
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(nextImage, 5000);
+</script>
+
+</body>
+</html>
