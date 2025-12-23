@@ -36,14 +36,14 @@
     /* Overlay */
     .overlay {
       position: relative;
-      min-height: 100vh; /* allow content to extend */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* align content from top */
+      justify-content: flex-start;
       padding: 3rem;
       background: rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(2px);
-      overflow-y: auto; /* allow scrolling */
+      overflow-y: auto;
     }
 
     header h1 {
@@ -73,31 +73,6 @@
 
     nav a:hover { text-decoration: underline; }
 
-    /* Section carousel */
-    .carousel-container {
-      max-width: 900px;
-      margin: 3rem auto 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1; /* above overlay but below any other layer if needed */
-    }
-
-    .carousel-container img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: opacity 0.5s ease;
-    }
-
-    .carousel-caption {
-      margin-top: 0.5rem;
-      font-style: italic;
-      color: #555;
-      font-size: 1rem;
-    }
-
     footer {
       font-size: 0.9rem;
       color: #555;
@@ -105,11 +80,9 @@
       text-align: center;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
       header p { font-size: 1rem; }
-      .carousel-container img { max-height: 250px; }
     }
   </style>
 </head>
@@ -140,42 +113,10 @@
       </nav>
     </header>
 
-    <!-- Carousel -->
-    <div class="carousel-container">
-      <a id="carousel-link" href="figures.html">
-        <img id="carousel-image" src="images/fig_19.jpeg" alt="Carousel preview">
-      </a>
-      <div class="carousel-caption" id="carousel-caption">Human Figures</div>
-    </div>
-
     <footer>
       © 2025 Narinder · artistnarender@icloud.com
     </footer>
   </div>
-
-<script>
-  // Carousel data
-  const carousel = [
-    {src:"images/fig_19.jpeg", caption:"Human Figures", link:"figures.html"},
-    {src:"images/land_06.jpeg", caption:"Landscapes", link:"landscapes.html"},
-    {src:"images/flower_04.jpeg", caption:"Floral Paintings", link:"floral.html"},
-    {src:"images/pencil_01.jpeg", caption:"Pencil Shading", link:"pencil.html"}
-  ];
-
-  let current = 0;
-  const image = document.getElementById("carousel-image");
-  const caption = document.getElementById("carousel-caption");
-  const link = document.getElementById("carousel-link");
-
-  function nextCarousel(){
-    current = (current + 1) % carousel.length;
-    image.src = carousel[current].src;
-    caption.textContent = carousel[current].caption;
-    link.href = carousel[current].link;
-  }
-
-  setInterval(nextCarousel, 5000); // auto-slide every 5 seconds
-</script>
 
 </body>
 </html>
