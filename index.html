@@ -12,7 +12,7 @@
 
     body {
       font-family: 'Cormorant Garamond', serif;
-      overflow: hidden;
+      overflow-x: hidden;
       background: #f9f9f7;
     }
 
@@ -23,7 +23,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -1;
+      z-index: -2; /* behind everything */
       overflow: hidden;
     }
 
@@ -36,13 +36,14 @@
     /* Overlay */
     .overlay {
       position: relative;
-      height: 100vh;
+      min-height: 100vh; /* allow content to extend */
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 3rem 3rem;
+      justify-content: flex-start; /* align content from top */
+      padding: 3rem;
       background: rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(2px);
+      overflow-y: auto; /* allow scrolling */
     }
 
     header h1 {
@@ -75,9 +76,10 @@
     /* Section carousel */
     .carousel-container {
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 3rem auto 0 auto;
       text-align: center;
       position: relative;
+      z-index: 1; /* above overlay but below any other layer if needed */
     }
 
     .carousel-container img {
@@ -99,6 +101,15 @@
     footer {
       font-size: 0.9rem;
       color: #555;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      .carousel-container img { max-height: 250px; }
     }
   </style>
 </head>
@@ -116,8 +127,7 @@
     <header>
       <h1>Narinder</h1>
       <p>
-        Watercolor artist exploring the human face through light, volume,
-        and minimal gesture.
+        Watercolor artist exploring the human face through light, volume, and minimal gesture.
       </p>
 
       <nav>
