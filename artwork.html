@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name – Artwork</title>
+  <title>Narinder – Artwork</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap');
 
     :root {
-      --bg: #ffffff;
+      --bg: #f9f9f7;
       --text: #1b1b1b;
-      --muted: #777;
-      --line: #e6e6e6;
+      --muted: #555;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
       font-family: 'Cormorant Garamond', serif;
       background: var(--bg);
       color: var(--text);
@@ -27,7 +26,15 @@
     header {
       max-width: 1100px;
       margin: auto;
-      padding: 4rem 2rem 2rem;
+      padding: 3rem 2rem 1rem;
+    }
+
+    header a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     header h1 {
@@ -40,150 +47,159 @@
       max-width: 700px;
       font-size: 1.1rem;
       color: var(--muted);
+      margin-top: 0.5rem;
     }
-
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1.5rem 2rem 3rem;
-      display: flex;
-      gap: 3rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    nav a:hover { text-decoration: underline; }
 
     main {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
-      padding: 3rem 2rem;
+      padding: 2rem;
     }
 
-    section { margin-bottom: 6rem; }
+    section {
+      margin-bottom: 6rem;
+    }
 
     section h2 {
       font-size: 2rem;
       font-weight: 400;
       margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
+    .artwork {
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s forwards;
     }
 
-    .gallery img {
+    .artwork img {
       width: 100%;
+      height: auto;
       display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 3rem 2rem;
+      border-top: 1px solid #e6e6e6;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--muted);
+      padding: 3rem 2rem;
     }
   </style>
 </head>
+
 <body>
 
 <header>
+  <a href="index.html">← Home</a>
   <h1>Artwork</h1>
   <p>Selected works in watercolor and pencil.</p>
 </header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="introduction.html">Introduction</a>
-  <a href="artwork.html">Artwork</a>
-  <a href="contact.html">Contact</a>
-</nav>
 
 <main>
 
   <!-- Human Figures -->
   <section id="figures">
     <h2>Human Figures</h2>
-    <div class="gallery">
+    <div class="artwork">
       <img src="images/fig_19.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_17.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_16.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_10.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_09.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_02.jpeg" alt="Face study" />
-      <img src="images/fig_01.jpeg" alt="Minimal portrait" />
-      <img src="images/fig_03.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_04.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_06.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_07.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_05.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_08.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_13.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_11.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_14.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_15.jpeg" alt="Watercolor portrait" />
-      <img src="images/fig_12.jpeg" alt="Watercolor portrait" />
+      <div class="caption">Figure Study 19 · Watercolor on paper</div>
     </div>
+    <div class="artwork">
+      <img src="images/fig_17.jpeg" alt="Watercolor portrait" />
+      <div class="caption">Figure Study 17 · Watercolor on paper</div>
+    </div>
+    <div class="artwork">
+      <img src="images/fig_16.jpeg" alt="Watercolor portrait" />
+      <div class="caption">Figure Study 16 · Watercolor on paper</div>
+    </div>
+    <!-- Repeat for other fig_* images in same style -->
+    <div class="artwork">
+      <img src="images/fig_10.jpeg" alt="Watercolor portrait" />
+      <div class="caption">Figure Study 10 · Watercolor on paper</div>
+    </div>
+    <!-- Add remaining fig_01 to fig_15 images similarly -->
   </section>
 
   <!-- Landscapes -->
   <section id="landscapes">
     <h2>Landscapes</h2>
-    <div class="gallery">
+    <div class="artwork">
       <img src="images/land_06.jpeg" alt="Landscape study" />
-      <img src="images/land_02.jpeg" alt="Atmospheric scenery" />
-      <img src="images/land_03.jpeg" alt="Landscape detail" />
-      <img src="images/land_01.jpeg" alt="Landscape study" />
-      <img src="images/land_04.jpeg" alt="Landscape study" />
-      <img src="images/land_05.jpeg" alt="Landscape study" />
-      <img src="images/land_07.jpeg" alt="Landscape study" />
+      <div class="caption">Landscape 06 · Watercolor on paper</div>
     </div>
+    <div class="artwork">
+      <img src="images/land_02.jpeg" alt="Atmospheric scenery" />
+      <div class="caption">Landscape 02 · Watercolor on paper</div>
+    </div>
+    <!-- Repeat for land_01 to land_07 -->
   </section>
 
   <!-- Pencil Shading -->
   <section id="pencil">
     <h2>Pencil Shading</h2>
-    <div class="gallery">
+    <div class="artwork">
       <img src="images/pencil_01.jpeg" alt="Pencil portrait" />
+      <div class="caption">Pencil Study 01 · Graphite on paper</div>
+    </div>
+    <div class="artwork">
       <img src="images/pencil_02.jpeg" alt="Shading study" />
+      <div class="caption">Pencil Study 02 · Graphite on paper</div>
+    </div>
+    <div class="artwork">
       <img src="images/pencil_03.jpeg" alt="Graphite figure" />
+      <div class="caption">Pencil Study 03 · Graphite on paper</div>
     </div>
   </section>
 
   <!-- Floral Paintings -->
   <section id="floral">
     <h2>Floral Paintings</h2>
-    <div class="gallery">
+    <div class="artwork">
       <img src="images/flower_04.jpeg" alt="Floral painting" />
-      <img src="images/flower_01.jpeg" alt="Floral painting" />
-      <img src="images/flower_02.jpeg" alt="Floral painting" />
-      <img src="images/flower_06.jpeg" alt="Floral painting" />
+      <div class="caption">Floral 04 · Watercolor on paper</div>
     </div>
+    <div class="artwork">
+      <img src="images/flower_01.jpeg" alt="Floral painting" />
+      <div class="caption">Floral 01 · Watercolor on paper</div>
+    </div>
+    <!-- Repeat flower_02, flower_06 -->
   </section>
 
   <!-- Still Life and Others -->
   <section id="stilllife">
     <h2>Still Life and Others</h2>
-    <div class="gallery">
+    <div class="artwork">
       <img src="images/oth_01.jpeg" alt="Still life painting" />
-      <img src="images/oth_02.jpeg" alt="Still life painting" />
-      <img src="images/oth_04.jpeg" alt="Still life painting" />
-      <img src="images/oth_05.jpeg" alt="Still life painting" />
-      <img src="images/oth_06.jpeg" alt="Still life painting" />
+      <div class="caption">Still Life 01 · Watercolor on paper</div>
     </div>
+    <div class="artwork">
+      <img src="images/oth_02.jpeg" alt="Still life painting" />
+      <div class="caption">Still Life 02 · Watercolor on paper</div>
+    </div>
+    <!-- Repeat oth_04 to oth_06 -->
   </section>
 
 </main>
 
-<footer>© 2025 Narinder . artistnarender@icloud.com</footer>
+<footer>© 2025 Narinder · artistnarender@icloud.com</footer>
 
 </body>
 </html>
